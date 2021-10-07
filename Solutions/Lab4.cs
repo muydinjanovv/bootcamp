@@ -9,8 +9,7 @@ namespace bootcamp.Solutions
             int N = int.Parse(Console.ReadLine());
             System
                 .Console
-                .WriteLine($"{N / 10000}!{(N / 1000) % 10}!{(N / 100) % 10}!{
-                    (N / 10) % 10}!{N % 10}");
+                .WriteLine($"{N / 10000}!{(N / 1000) % 10}!{(N / 100) % 10}!{(N / 10) % 10}!{N % 10}");
         }
 
         public void Problem2()

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace bootcamp.Solutions
 {
@@ -246,30 +247,19 @@ namespace bootcamp.Solutions
             Console.WriteLine(sum);
         }
 
-        public void Problem13()
-        {
-            int sum = 0, cnt = 0;
-
-            while(true)
-            {
-                string[] N = Console.ReadLine().Split(' ');
-                int[] number = new int[N.Length];
-                for (int i = 0; i < N.Length; i++)
-                {
-                    number[i] = Convert.ToInt32(N[i]);
-                }
-
-                cnt ++;
-
-                if(number <= 0)
-                {
-                    System.Console.WriteLine($"{sum} {(sum / cnt + 1):F2} {cnt - 1}");
-                    break;
-                }
-                sum += number;
+       public void Problem13(){
+            var ints = Console.ReadLine().Split().Select(int.Parse).ToList();
+            float len=ints.Count();
+            int sum=0,count=0;
+            float aver=0;
+            for(int i=0;i<len;i++){
+                if(ints[i]<0) break;
+                sum+=ints[i];
+                aver+=ints[i];
+                count++;
             }
+            Console.WriteLine($"{sum} {(aver/len).ToString("0.00")} {len}");
         }
-
         public void Problem14()
         {
             int I = 1; int Y = 0;
